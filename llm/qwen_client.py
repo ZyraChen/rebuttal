@@ -11,7 +11,7 @@ import os
 class QwenClient:
     """LLM API Wrapper - Using Alibaba Cloud Qwen"""
 
-    def __init__(self, api_key: str = None, model: str = "qwen3-max"):
+    def __init__(self, api_key: str = "sk-350e5068abb745919baa79e2673ce763", model: str = "qwen3-max"):
         # If api_key is not provided, get it from environment variable
         api_key = api_key
 

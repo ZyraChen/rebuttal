@@ -53,7 +53,7 @@ def collect_evidence_for_claim(
     print(f"Claim: {claim}\n")
 
     # Initialize components
-    llm_client = QwenClient(config.DASHSCOPE_API_KEY)
+    llm_client = QwenClient("sk-350e5068abb745919baa79e2673ce763")
     jina = JinaSearch(config.JINA_API_KEY)
 
     # Create chains

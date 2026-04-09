@@ -55,8 +55,8 @@ def run_claim_workflow(claim: str, max_rounds: int = 2, checkpoint_dir: Path = N
     print(f"Claim: {claim}\n")
 
     # Initialize
-    llm_client = QwenClient(config.DASHSCOPE_API_KEY)
-    jina = JinaSearch(config.JINA_API_KEY)
+    llm_client = QwenClient("sk-350e5068abb745919baa79e2673ce763")
+    jina = JinaSearch("jina_55408fca253540cb892655bd007f9c264YWeOA2w-l43dEC15Pz_hVf9n2Ue")
     claim_graph = ClaimGraph(claim)
     attack_detector = ClaimAttackDetector(llm_client, claim)
 

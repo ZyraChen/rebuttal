@@ -6,8 +6,8 @@ import os
 from pathlib import Path
 
 # API Keys - Please fill in your API keys here
-DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "your-dashscope-api-key-here")
-JINA_API_KEY = os.getenv("JINA_API_KEY", "your-jina-api-key-here")
+DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "sk-350e5068abb745919baa79e2673ce763")
+JINA_API_KEY = os.getenv("JINA_API_KEY", "jina_55408fca253540cb892655bd007f9c264YWeOA2w-l43dEC15Pz_hVf9n2Ue")
 
 # Model configuration
 LLM_MODEL = "qwen-plus-2025-12-01"  # Alibaba Cloud Qwen model
