@@ -28,7 +28,7 @@ class QwenClient:
         messages: List[Dict[str, str]],
         system: Optional[str] = None,
         temperature: float = 0.1,
-        max_tokens: int = 50000,
+        max_tokens: int = 8000,
         enable_search: bool = False,
         force_search: bool = False,
         enable_thinking: bool = False,

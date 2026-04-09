@@ -392,17 +392,15 @@ def benchmark_zeroshot_claim(claim: str, claim_id: str) -> ZeroShotTiming:
     record = ZeroShotTiming(claim_id=claim_id, claim=claim)
     llm_client = QwenClient(config.DASHSCOPE_API_KEY)
 
-    # enable_search=True → LLM internally invokes web search (counts as 1 augmented API call)
-    llm = QwenLLMWrapper(
-        qwen_client=llm_client,
-        enable_search=True,
-        force_search=True,
-        search_strategy="pro",
-    )
-
     t0 = time.perf_counter()
     try:
-        llm.invoke(ZEROSHOT_PROMPT.format(claim=claim))
+        # Directly call QwenClient.chat() to avoid LangChain version compatibility issues
+        llm_client.chat(
+            messages=[{"role": "user", "content": ZEROSHOT_PROMPT.format(claim=claim)}],
+            enable_search=True,
+            force_search=True,
+            search_strategy="turbo",
+        )
     except Exception as e:
         print(f"  ⚠ ZeroShot call failed: {e}")
     record.t_total = time.perf_counter() - t0
